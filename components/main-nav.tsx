@@ -65,7 +65,6 @@ function Sidenav() {
 
 function NavLink({ name, href, icon: Icon }: NavLinkProps) {
   const currentPath = usePathname();
-  console.log(name);
 
   return (
     <Link

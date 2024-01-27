@@ -1,10 +1,11 @@
 import Sidenav from "@/components/main-nav";
-
+import TopNav from "@/components/ui/custom-menubar";
 
 export default function Home() {
   return (
-   <div>
-    <Sidenav/>
-   </div>
+    <div>
+      <TopNav/>
+      <Sidenav />
+    </div>
   );
 }
