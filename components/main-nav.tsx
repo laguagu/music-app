@@ -47,7 +47,7 @@ function Sidenav() {
 
   return (
     <nav className="flex flex-col">
-      <div className="px-5 text-zinc-400 w-52 min-h-screen border">
+      <div className="px-5 text-zinc-400 w-52 min-h-screen border-r">
         {linkGroups.map((group) => (
           <div key={group.title}>
             <p className="text-lg font-bold pb-2 ml-2 text-slate-600 mt-5">
