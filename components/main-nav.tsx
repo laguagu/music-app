@@ -10,52 +10,75 @@ import { usePathname } from "next/navigation";
 import { NavLinkProps, NavLinksProps } from "@/lib/definitions";
 
 function Sidenav() {
-  const currentPath = usePathname();
-
-  const discoveryLinks = [
-    { name: "Disvocer", href: "/", icon: HomeIcon },
-    { name: "Browse", href: "/", icon: HomeIcon },
-    { name: "Radio", href: "/", icon: HomeIcon },
-  ];
-
-  const libaryLinks = [
-    { name: "Disvocer", href: "/", icon: HomeIcon },
-    { name: "Disvocer", href: "/2", icon: HomeIcon },
+  const linkGroups = [
+    {
+      title: "Discover",
+      links: [
+        { name: "Discover", href: "/", icon: HomeIcon },
+        { name: "Browse", href: "/", icon: HomeIcon },
+        { name: "Radio", href: "/", icon: HomeIcon },
+      ],
+    },
+    {
+      title: "Library",
+      links: [
+        { name: "Playlist", href: "/", icon: HomeIcon },
+        { name: "Songs", href: "/", icon: HomeIcon },
+        { name: "Albums", href: "/", icon: HomeIcon },
+        { name: "Artist", href: "/", icon: HomeIcon },
+        { name: "Top-50", href: "/", icon: HomeIcon },
+      ],
+    },
+    {
+      title: "Playlists",
+      links: [
+        { name: "Recently Played", href: "/", icon: HomeIcon },
+        { name: "Recently Added", href: "/", icon: HomeIcon },
+        { name: "Top Hits", href: "/", icon: HomeIcon },
+        { name: "Top Artist", href: "/", icon: HomeIcon },
+        { name: "Top Albums", href: "/", icon: HomeIcon },
+        { name: "Heavy Metal", href: "/", icon: HomeIcon },
+        { name: "80's Hits ", href: "/", icon: HomeIcon },
+        { name: "Gym music ", href: "/", icon: HomeIcon },
+        { name: "Study ", href: "/", icon: HomeIcon },
+      ],
+    },
   ];
 
   return (
     <nav className="flex flex-col">
-      <NavLinks links={discoveryLinks} title="Discover" />
+      <div className="px-5 text-zinc-400 w-52 min-h-screen border">
+        {linkGroups.map((group) => (
+          <div key={group.title}>
+            <p className="text-lg font-bold pb-2 ml-2 text-slate-600 mt-5">
+              {group.title}
+            </p>
+            {group.links.map((link) => (
+              <NavLink key={link.name} {...link} />
+            ))}
+          </div>
+        ))}
+      </div>
     </nav>
-  );
-}
-
-function NavLinks({ links, title }: NavLinksProps) {
-  return (
-    <div className="px-5 py-4 text-zinc-400 w-52 min-h-screen border">
-      <p className="text-lg font-bold pb-2 ml-4 text-slate-600">{title}</p>
-      {links.map((link) => (
-        <NavLink key={link.name} {...link} />
-      ))}
-    </div>
   );
 }
 
 function NavLink({ name, href, icon: Icon }: NavLinkProps) {
   const currentPath = usePathname();
+  console.log(name);
 
   return (
     <Link
       href={href}
       key={name}
-      className={classNames("py-2 flex rounded-lg m-1 bg-white", {
-        "bg-gray-100 hover:bg-slate-100": name === "Disvocer",
-        "hover:bg-gray-100": name !== currentPath,
+      className={classNames("py-2 mt-1 flex rounded-lg my-px", {
+        "bg-gray-100 hover:bg-slate-100 ": href === "/" && name === "Discover",
+        "hover:bg-gray-100 transition duration-75": name !== currentPath,
       })}
     >
       <div className="flex items-center justify-center">
-        <Icon className="w-5 mr-2 ml-4 text-black" />
-        <span className="text-slate-500 font-semibold text-sm">{name}</span>
+        <Icon className="w-5 mr-2 ml-2 text-black" />
+        <span className="text-slate-500 font-semibold text-xs">{name}</span>
       </div>
     </Link>
   );
