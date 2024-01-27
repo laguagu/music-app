@@ -7,7 +7,7 @@ import {
 import classNames from "classnames";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { NavLinkProps, NavLinksProps } from "@/lib/definitions";
+import { NavLinkProps } from "@/lib/definitions";
 
 function Sidenav() {
   const linkGroups = [
