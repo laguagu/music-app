@@ -1,8 +1,13 @@
 "use client";
 import {
-  UserGroupIcon,
   HomeIcon,
-  DocumentDuplicateIcon,
+  Bars4Icon,
+  RadioIcon,
+  MusicalNoteIcon,
+  ListBulletIcon,
+  AdjustmentsVerticalIcon,
+  ChartBarIcon,
+  MicrophoneIcon
 } from "@heroicons/react/24/outline";
 import classNames from "classnames";
 import Link from "next/link";
@@ -15,37 +20,38 @@ function Sidenav() {
       title: "Discover",
       links: [
         { name: "Discover", href: "/", icon: HomeIcon },
-        { name: "Browse", href: "/", icon: HomeIcon },
-        { name: "Radio", href: "/", icon: HomeIcon },
+        { name: "Browse", href: "/", icon: Bars4Icon },
+        { name: "Radio", href: "/", icon: RadioIcon },
       ],
     },
     {
       title: "Library",
       links: [
-        { name: "Playlist", href: "/", icon: HomeIcon },
-        { name: "Songs", href: "/", icon: HomeIcon },
-        { name: "Albums", href: "/", icon: HomeIcon },
-        { name: "Artist", href: "/", icon: HomeIcon },
-        { name: "Top-50", href: "/", icon: HomeIcon },
+        { name: "Playlist", href: "/", icon: ListBulletIcon },
+        { name: "Songs", href: "/", icon: MusicalNoteIcon },
+        { name: "Albums", href: "/", icon: AdjustmentsVerticalIcon },
+        { name: "Artist", href: "/", icon: MicrophoneIcon },
+        { name: "Top-50", href: "/", icon: ChartBarIcon },
       ],
     },
     {
       title: "Playlists",
       links: [
-        { name: "Recently Played", href: "/", icon: HomeIcon },
-        { name: "Recently Added", href: "/", icon: HomeIcon },
-        { name: "Top Hits", href: "/", icon: HomeIcon },
-        { name: "Top Artist", href: "/", icon: HomeIcon },
-        { name: "Top Albums", href: "/", icon: HomeIcon },
-        { name: "Heavy Metal", href: "/", icon: HomeIcon },
-        { name: "80's Hits ", href: "/", icon: HomeIcon },
-        { name: "Gym music ", href: "/", icon: HomeIcon },
-        { name: "Study ", href: "/", icon: HomeIcon },
+        { name: "Recently Played", href: "/", icon: MusicalNoteIcon },
+        { name: "Recently Added", href: "/", icon: MusicalNoteIcon },
+        { name: "Top Hits", href: "/", icon: MusicalNoteIcon },
+        { name: "Top Artist", href: "/", icon: MusicalNoteIcon },
+        { name: "Top Albums", href: "/", icon: MusicalNoteIcon },
+        { name: "Heavy Metal", href: "/", icon: MusicalNoteIcon },
+        { name: "80's Hits ", href: "/", icon: MusicalNoteIcon },
+        { name: "Gym music ", href: "/", icon: MusicalNoteIcon },
+        { name: "Study ", href: "/", icon: MusicalNoteIcon },
       ],
     },
   ];
 
   return (
+
     <nav className="flex flex-col">
       <div className="px-5 text-zinc-400 w-52 min-h-screen border-r">
         {linkGroups.map((group) => (
@@ -59,6 +65,7 @@ function Sidenav() {
           </div>
         ))}
       </div>
+
     </nav>
   );
 }

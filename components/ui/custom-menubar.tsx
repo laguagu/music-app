@@ -17,7 +17,7 @@ import {
 export default function TopNav() {
   return (
     <div>
-      <Menubar className="p-3 font-sans text-slate-500">
+      <Menubar className="p-3 font-sans text-slate-500 w-full">
         <MenubarMenu>
           <MenubarTrigger className="text-black font-bold">Music</MenubarTrigger>
           <MenubarContent>
