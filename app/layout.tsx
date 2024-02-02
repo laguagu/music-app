@@ -20,9 +20,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <TopNav />
-        <div className="flex">
+        <div className="flex md:flex-row md:overflow-hidden">
           <Sidenav />
-          <main>
+          <main className="flex-grow">
             {children}
           </main>
         </div>
