@@ -1,29 +1,30 @@
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { PlusCircledIcon } from "@radix-ui/react-icons"
 
 export default function MusicPage() {
   return (
     <div className="flex justify-around md:flex-row md:overflow-hidden mt-7">
       <div className="flex">
-        <Tabs defaultValue="account" className="w-[400px]">
+        <Tabs defaultValue="music" className="h-full">
           <TabsList className="bg-gray-100 ">
-            <TabsTrigger value="account">Account</TabsTrigger>
-            <TabsTrigger value="password">Password</TabsTrigger>
+            <TabsTrigger value="music">Music</TabsTrigger>
+            <TabsTrigger value="podcast">Podcasts</TabsTrigger>
             <TabsTrigger value="live" disabled>
-              Live
+              Streams
             </TabsTrigger>
           </TabsList>
-          <TabsContent value="account">
+          <TabsContent value="music">
             Make changes to your account here.
           </TabsContent>
-          <TabsContent value="password">Change your password here.</TabsContent>
+          <TabsContent value="podcast">Change your password here.</TabsContent>
         </Tabs>
       </div>
 
       <div className="flex justify-start">
         
-        <Button variant="outline">Button</Button>
+        <Button variant="default"><PlusCircledIcon className="mr-2 h-4 w-4" />Add music</Button>
       </div>
       <div className="flex justify-end"></div>
     </div>
