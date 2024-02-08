@@ -3,12 +3,12 @@ import { Separator } from "@/components/ui/separator";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { PlusCircledIcon } from "@radix-ui/react-icons";
 import MusicHeader from "@/components/ui/music-header";
-import CarouselSize from "@/components/ui/discover/music-carousel";
+import CarouselPlugin from "@/components/ui/music/music-carousel";
+import ResizableDemo from "@/components/ui/music/resizable";
 
 export default function MusicPage() {
   return (
     <div className="max-w-full mx-auto mt-7 px-4">
-      {/* Välilehdet ja Lisää musiikkia -nappi samassa ylä-tason konteinerissa */}
       <div className="bg-background">
         <div className="flex flex-col lg:flex-row">
           <div className="flex-grow">
@@ -27,11 +27,16 @@ export default function MusicPage() {
                     Add music
                   </Button>
                 </div>
-                <TabsContent value="music" className="outline-none">
+                {/* Musiikki välilehti */}
                   <MusicHeader />
-                  <Separator className="my-4 w-full" />
-                  <CarouselSize />
+                  <Separator className="my-2 w-full" />
+                <div className="bg-red-300 justify-center grid grid-cols-2 py-5"> 
+                <TabsContent value="music" className="outline-none just">
+                  <CarouselPlugin/>
                 </TabsContent>
+                <ResizableDemo/>
+                </div>
+                {/* Podcast välilehti */}
                 <TabsContent value="podcast">
                   Change your password here.
                 </TabsContent>
